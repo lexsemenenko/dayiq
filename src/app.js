@@ -2,7 +2,6 @@ import './css/main.less';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import AppRouter from './routers/AppRouter';
 
-import Test from './components/Test';
-
-ReactDOM.render(<Test />, document.getElementById('app'));
+ReactDOM.render(<AppRouter />, document.getElementById('app'));
