@@ -4,7 +4,6 @@ import Header from '../components/Header';
 
 import RecordDashboardPage from '../components/RecordDashboardPage';
 import AddRecord from '../components/AddRecord';
-import EditRecord from '../components/EditRecord';
 import PageHelp from '../components/PageHelp';
 import PageNotFound from '../components/PageNotFound';
 
@@ -15,7 +14,6 @@ const AppRouter = () => (
       <Switch>
         <Route path="/" component={RecordDashboardPage} exact />
         <Route path="/create" component={AddRecord} />
-        <Route path="/edit" component={EditRecord} />
         <Route path="/help" component={PageHelp} />
         <Route component={PageNotFound} />
       </Switch>
