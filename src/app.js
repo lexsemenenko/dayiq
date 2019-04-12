@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import AppRouter from './routers/AppRouter';
 import './css/main.less';
 
@@ -10,12 +11,17 @@ import getVisibleTasks from './selectors/tasks';
 
 const store = configureStore();
 
-store.dispatch(addTask({ description: 'Do Projects' }));
-store.dispatch(addTask({ description: 'Do Study' }));
-store.dispatch(setTextFilter('study'));
+store.dispatch(addTask({ description: 'Do Projects', time: 2555 }));
+store.dispatch(addTask({ description: 'Do Study', time: 6000 }));
+store.dispatch(setTextFilter('do'));
 
 const state = store.getState();
 const visibleTasks = getVisibleTasks(state.tasks, state.filters);
-console.log(visibleTasks);
 
-ReactDOM.render(<AppRouter />, document.getElementById('app'));
+const jsx = (
+  <Provider store={store}>
+    <AppRouter />
+  </Provider>
+);
+
+ReactDOM.render(jsx, document.getElementById('app'));

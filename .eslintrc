@@ -33,7 +33,7 @@
       {
         "trailingComma": "none",
         "singleQuote": true,
-        "printWidth": 80
+        "printWidth": 120
       }
     ],
     "react/jsx-filename-extension": [
